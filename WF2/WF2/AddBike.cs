@@ -12,13 +12,17 @@ namespace WF2
 {
     public partial class AddBike : Form
     {
-        private UcCross ucCross = new UcCross();
-        private UcHardTail ucHardTail = new UcHardTail();
-        private UcMountain ucMountain = new UcMountain();
-        public AddBike()
+        private UcCross ucCross;
+        private UcHardTail ucHardTail;
+        private UcMountain ucMountain;
+        public AddBike(int bikeId)
         {
             InitializeComponent();
-            
+
+            ucMountain = new UcMountain(bikeId);
+            ucCross = new UcCross(bikeId);
+            ucMountain = new UcMountain(bikeId);
+
             cbBikeType.Items.Add(BikeType.Cross);
             cbBikeType.Items.Add(BikeType.HardTail);
             cbBikeType.Items.Add(BikeType.Mountain);

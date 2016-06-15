@@ -12,14 +12,16 @@ namespace WF2
 {
     public partial class UcMountain : UserControl
     {
-        public UcMountain()
+        private readonly int Id;
+        public UcMountain(int bikeId)
         {
             InitializeComponent();
+            Id = bikeId;
         }
 
         public Mountain GetMountain()
         {
-            return new Mountain { Name = tbName.Text };
+            return new Mountain(Id) { Name = tbName.Text };
         }
     }
 }

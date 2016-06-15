@@ -33,11 +33,11 @@
             this.bikeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.removeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsSeparator = new System.Windows.Forms.ToolStripSeparator();
+            this.openSavedToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.windowToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsSeparator = new System.Windows.Forms.ToolStripSeparator();
-            this.openSavedToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.scContent = new System.Windows.Forms.SplitContainer();
             this.lvBikes = new System.Windows.Forms.ListView();
             this.colName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -75,16 +75,28 @@
             // addToolStripMenuItem
             // 
             this.addToolStripMenuItem.Name = "addToolStripMenuItem";
-            this.addToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            this.addToolStripMenuItem.Size = new System.Drawing.Size(162, 26);
             this.addToolStripMenuItem.Text = "Add";
             this.addToolStripMenuItem.Click += new System.EventHandler(this.addToolStripMenuItem_Click);
             // 
             // removeToolStripMenuItem
             // 
             this.removeToolStripMenuItem.Name = "removeToolStripMenuItem";
-            this.removeToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            this.removeToolStripMenuItem.Size = new System.Drawing.Size(162, 26);
             this.removeToolStripMenuItem.Text = "Remove";
             this.removeToolStripMenuItem.Click += new System.EventHandler(this.removeToolStripMenuItem_Click);
+            // 
+            // tsSeparator
+            // 
+            this.tsSeparator.Name = "tsSeparator";
+            this.tsSeparator.Size = new System.Drawing.Size(159, 6);
+            // 
+            // openSavedToolStripMenuItem
+            // 
+            this.openSavedToolStripMenuItem.Name = "openSavedToolStripMenuItem";
+            this.openSavedToolStripMenuItem.Size = new System.Drawing.Size(162, 26);
+            this.openSavedToolStripMenuItem.Text = "Open saved";
+            this.openSavedToolStripMenuItem.Click += new System.EventHandler(this.openSavedToolStripMenuItem_Click);
             // 
             // aboutToolStripMenuItem
             // 
@@ -103,21 +115,9 @@
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(108, 26);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
-            // 
-            // tsSeparator
-            // 
-            this.tsSeparator.Name = "tsSeparator";
-            this.tsSeparator.Size = new System.Drawing.Size(178, 6);
-            // 
-            // openSavedToolStripMenuItem
-            // 
-            this.openSavedToolStripMenuItem.Name = "openSavedToolStripMenuItem";
-            this.openSavedToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
-            this.openSavedToolStripMenuItem.Text = "Open saved";
-            this.openSavedToolStripMenuItem.Click += new System.EventHandler(this.openSavedToolStripMenuItem_Click);
             // 
             // scContent
             // 
@@ -140,6 +140,7 @@
             this.colName,
             this.colSize});
             this.lvBikes.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lvBikes.FullRowSelect = true;
             this.lvBikes.GridLines = true;
             this.lvBikes.Location = new System.Drawing.Point(0, 0);
             this.lvBikes.MultiSelect = false;
@@ -148,6 +149,7 @@
             this.lvBikes.TabIndex = 0;
             this.lvBikes.UseCompatibleStateImageBehavior = false;
             this.lvBikes.View = System.Windows.Forms.View.Details;
+            this.lvBikes.SelectedIndexChanged += new System.EventHandler(this.lvBikes_SelectedIndexChanged);
             // 
             // colName
             // 
