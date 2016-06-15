@@ -62,6 +62,7 @@
     </Compile>
     <Compile Include="Cross.cs" />
     <Compile Include="HardTail.cs" />
+    <Compile Include="Helper.cs" />
     <Compile Include="Mountain.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

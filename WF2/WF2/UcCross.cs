@@ -22,6 +22,7 @@ namespace WF2
             return new Cross
             {
                 Name = tbName.Text,
+                Size = tbSize.Text.GetInt()
             };
         }
     }

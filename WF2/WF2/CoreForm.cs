@@ -15,7 +15,6 @@ namespace WF2
         public CoreForm()
         {
             InitializeComponent();
-            //scContent.Panel2.Controls.Add(new UcCross());
         }
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
@@ -28,7 +27,10 @@ namespace WF2
             AddBike ab = new AddBike();
             if (ab.ShowDialog() == DialogResult.OK)
             {
-                lvBikes.Items.Add(ab.GetCreatedBike().ToString());
+                var bike = ab.GetCreatedBike();
+                var item = new ListViewItem(bike.Name);
+                item.SubItems.Add(bike.Size.ToString());
+                lvBikes.Items.Add(item);
             }
         }
 

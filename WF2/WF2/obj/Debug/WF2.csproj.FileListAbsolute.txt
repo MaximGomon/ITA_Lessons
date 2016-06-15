@@ -11,3 +11,16 @@ D:\Work\Шаг\Уроки\WF2\WF2\obj\Debug\WF2.AddBike.resources
 D:\Work\Шаг\Уроки\WF2\WF2\obj\Debug\WF2.ucCross.resources
 D:\Work\Шаг\Уроки\WF2\WF2\obj\Debug\WF2.ucHardTail.resources
 D:\Work\Шаг\Уроки\WF2\WF2\obj\Debug\WF2.ucMountain.resources
+D:\Work\ITA\WF2\WF2\bin\Debug\WF2.exe.config
+D:\Work\ITA\WF2\WF2\obj\Debug\WF2.exe
+D:\Work\ITA\WF2\WF2\obj\Debug\WF2.pdb
+D:\Work\ITA\WF2\WF2\bin\Debug\WF2.exe
+D:\Work\ITA\WF2\WF2\bin\Debug\WF2.pdb
+D:\Work\ITA\WF2\WF2\obj\Debug\WF2.csprojResolveAssemblyReference.cache
+D:\Work\ITA\WF2\WF2\obj\Debug\WF2.AddBike.resources
+D:\Work\ITA\WF2\WF2\obj\Debug\WF2.CoreForm.resources
+D:\Work\ITA\WF2\WF2\obj\Debug\WF2.Properties.Resources.resources
+D:\Work\ITA\WF2\WF2\obj\Debug\WF2.UcCross.resources
+D:\Work\ITA\WF2\WF2\obj\Debug\WF2.UcHardTail.resources
+D:\Work\ITA\WF2\WF2\obj\Debug\WF2.UcMountain.resources
+D:\Work\ITA\WF2\WF2\obj\Debug\WF2.csproj.GenerateResource.Cache

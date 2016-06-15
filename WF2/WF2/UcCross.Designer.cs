@@ -28,69 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.lbWheel = new System.Windows.Forms.Label();
-            this.tbWheel = new System.Windows.Forms.TextBox();
-            this.tbSpeedCount = new System.Windows.Forms.TextBox();
-            this.lbSpeedCount = new System.Windows.Forms.Label();
-            this.lbColor = new System.Windows.Forms.Label();
-            this.cbColor = new System.Windows.Forms.ComboBox();
             this.tbName = new System.Windows.Forms.TextBox();
             this.lbName = new System.Windows.Forms.Label();
+            this.tbSize = new System.Windows.Forms.TextBox();
+            this.lbSize = new System.Windows.Forms.Label();
+            this.gbMain = new System.Windows.Forms.GroupBox();
+            this.gbMain.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // lbWheel
-            // 
-            this.lbWheel.AutoSize = true;
-            this.lbWheel.Location = new System.Drawing.Point(34, 38);
-            this.lbWheel.Name = "lbWheel";
-            this.lbWheel.Size = new System.Drawing.Size(48, 17);
-            this.lbWheel.TabIndex = 0;
-            this.lbWheel.Text = "Wheel";
-            // 
-            // tbWheel
-            // 
-            this.tbWheel.Location = new System.Drawing.Point(88, 38);
-            this.tbWheel.Name = "tbWheel";
-            this.tbWheel.Size = new System.Drawing.Size(100, 22);
-            this.tbWheel.TabIndex = 1;
-            // 
-            // tbSpeedCount
-            // 
-            this.tbSpeedCount.Location = new System.Drawing.Point(130, 75);
-            this.tbSpeedCount.Name = "tbSpeedCount";
-            this.tbSpeedCount.Size = new System.Drawing.Size(58, 22);
-            this.tbSpeedCount.TabIndex = 3;
-            // 
-            // lbSpeedCount
-            // 
-            this.lbSpeedCount.AutoSize = true;
-            this.lbSpeedCount.Location = new System.Drawing.Point(34, 78);
-            this.lbSpeedCount.Name = "lbSpeedCount";
-            this.lbSpeedCount.Size = new System.Drawing.Size(90, 17);
-            this.lbSpeedCount.TabIndex = 2;
-            this.lbSpeedCount.Text = "Speed Count";
-            // 
-            // lbColor
-            // 
-            this.lbColor.AutoSize = true;
-            this.lbColor.Location = new System.Drawing.Point(34, 117);
-            this.lbColor.Name = "lbColor";
-            this.lbColor.Size = new System.Drawing.Size(41, 17);
-            this.lbColor.TabIndex = 4;
-            this.lbColor.Text = "Color";
-            // 
-            // cbColor
-            // 
-            this.cbColor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbColor.FormattingEnabled = true;
-            this.cbColor.Location = new System.Drawing.Point(81, 114);
-            this.cbColor.Name = "cbColor";
-            this.cbColor.Size = new System.Drawing.Size(107, 24);
-            this.cbColor.TabIndex = 5;
             // 
             // tbName
             // 
-            this.tbName.Location = new System.Drawing.Point(88, 144);
+            this.tbName.Location = new System.Drawing.Point(119, 78);
             this.tbName.Name = "tbName";
             this.tbName.Size = new System.Drawing.Size(100, 22);
             this.tbName.TabIndex = 7;
@@ -98,40 +46,60 @@
             // lbName
             // 
             this.lbName.AutoSize = true;
-            this.lbName.Location = new System.Drawing.Point(34, 144);
+            this.lbName.Location = new System.Drawing.Point(65, 78);
             this.lbName.Name = "lbName";
             this.lbName.Size = new System.Drawing.Size(45, 17);
             this.lbName.TabIndex = 6;
             this.lbName.Text = "Name";
             // 
+            // tbSize
+            // 
+            this.tbSize.Location = new System.Drawing.Point(119, 106);
+            this.tbSize.Name = "tbSize";
+            this.tbSize.Size = new System.Drawing.Size(100, 22);
+            this.tbSize.TabIndex = 9;
+            // 
+            // lbSize
+            // 
+            this.lbSize.AutoSize = true;
+            this.lbSize.Location = new System.Drawing.Point(65, 106);
+            this.lbSize.Name = "lbSize";
+            this.lbSize.Size = new System.Drawing.Size(35, 17);
+            this.lbSize.TabIndex = 8;
+            this.lbSize.Text = "Size";
+            // 
+            // gbMain
+            // 
+            this.gbMain.Controls.Add(this.tbSize);
+            this.gbMain.Controls.Add(this.lbName);
+            this.gbMain.Controls.Add(this.lbSize);
+            this.gbMain.Controls.Add(this.tbName);
+            this.gbMain.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gbMain.Location = new System.Drawing.Point(0, 0);
+            this.gbMain.Name = "gbMain";
+            this.gbMain.Size = new System.Drawing.Size(288, 209);
+            this.gbMain.TabIndex = 10;
+            this.gbMain.TabStop = false;
+            this.gbMain.Text = "Cross";
+            // 
             // UcCross
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.tbName);
-            this.Controls.Add(this.lbName);
-            this.Controls.Add(this.cbColor);
-            this.Controls.Add(this.lbColor);
-            this.Controls.Add(this.tbSpeedCount);
-            this.Controls.Add(this.lbSpeedCount);
-            this.Controls.Add(this.tbWheel);
-            this.Controls.Add(this.lbWheel);
+            this.Controls.Add(this.gbMain);
             this.Name = "UcCross";
             this.Size = new System.Drawing.Size(288, 209);
+            this.gbMain.ResumeLayout(false);
+            this.gbMain.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Label lbWheel;
-        private System.Windows.Forms.TextBox tbWheel;
-        private System.Windows.Forms.TextBox tbSpeedCount;
-        private System.Windows.Forms.Label lbSpeedCount;
-        private System.Windows.Forms.Label lbColor;
-        private System.Windows.Forms.ComboBox cbColor;
         private System.Windows.Forms.TextBox tbName;
         private System.Windows.Forms.Label lbName;
+        private System.Windows.Forms.TextBox tbSize;
+        private System.Windows.Forms.Label lbSize;
+        private System.Windows.Forms.GroupBox gbMain;
     }
 }
