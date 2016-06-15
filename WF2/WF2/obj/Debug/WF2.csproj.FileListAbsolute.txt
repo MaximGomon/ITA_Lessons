@@ -1,0 +1,13 @@
+D:\Work\Шаг\Уроки\WF2\WF2\bin\Debug\WF2.exe.config
+D:\Work\Шаг\Уроки\WF2\WF2\bin\Debug\WF2.exe
+D:\Work\Шаг\Уроки\WF2\WF2\bin\Debug\WF2.pdb
+D:\Work\Шаг\Уроки\WF2\WF2\obj\Debug\WF2.csprojResolveAssemblyReference.cache
+D:\Work\Шаг\Уроки\WF2\WF2\obj\Debug\WF2.coreForm.resources
+D:\Work\Шаг\Уроки\WF2\WF2\obj\Debug\WF2.Properties.Resources.resources
+D:\Work\Шаг\Уроки\WF2\WF2\obj\Debug\WF2.csproj.GenerateResource.Cache
+D:\Work\Шаг\Уроки\WF2\WF2\obj\Debug\WF2.exe
+D:\Work\Шаг\Уроки\WF2\WF2\obj\Debug\WF2.pdb
+D:\Work\Шаг\Уроки\WF2\WF2\obj\Debug\WF2.AddBike.resources
+D:\Work\Шаг\Уроки\WF2\WF2\obj\Debug\WF2.ucCross.resources
+D:\Work\Шаг\Уроки\WF2\WF2\obj\Debug\WF2.ucHardTail.resources
+D:\Work\Шаг\Уроки\WF2\WF2\obj\Debug\WF2.ucMountain.resources
