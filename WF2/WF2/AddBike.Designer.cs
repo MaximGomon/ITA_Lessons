@@ -102,6 +102,7 @@
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "AddBike";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.AddBike_FormClosing);
             this.ResumeLayout(false);
             this.PerformLayout();
 

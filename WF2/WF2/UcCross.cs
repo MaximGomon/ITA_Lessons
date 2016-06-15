@@ -17,6 +17,19 @@ namespace WF2
             InitializeComponent();
         }
 
+        public bool ValidateControls()
+        {
+            if (tbName.Text.Trim() == String.Empty)
+            {
+                return false;
+            }
+            if (tbSize.Text.GetInt() <= 0)
+            {
+                return false;
+            }
+            return true;
+        }
+
         public Cross GetCross()
         {
             return new Cross
