@@ -78,5 +78,10 @@ namespace WF2
                 }
             }
         }
+
+        private void bikeToolStripMenuItem_MouseHover(object sender, EventArgs e)
+        {
+            toolTip.Show(((ToolStripMenuItem)sender).ToolTipText, mainMenuStrip);
+        }
     }
 }
