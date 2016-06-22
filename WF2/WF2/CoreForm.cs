@@ -89,23 +89,71 @@ namespace WF2
         {
             try
             {
-                SaveToFile();
+                SaveToFileStreamSafe();
+                MessageBox.Show("Information", "File saved", 
+                    MessageBoxButtons.OK, 
+                    MessageBoxIcon.Information);
             }
             catch (Exception ex)
             {
-                throw;
+                MessageBox.Show("Error", ex.Message,
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+            }
+        }
+
+        private void SaveToFileSimple()
+        {
+            try
+            {
+                string result = String.Empty;
+
+                foreach (var bike in _bikes)
+                {
+                    result += bike + Environment.NewLine;
+                }
+
+                File.WriteAllText(@"D:\Work\ITA\base.txt", result);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message, ex);
             }
             
         }
 
-        private void SaveToFile()
+        private void SaveToFileStreamSafe()
+        {
+            try
+            {
+                using (var st = new FileStream(@"D:\Work\ITA\base.txt",
+                            FileMode.CreateNew))
+                {
+                    using (var sw = new StreamWriter(st))
+                    {
+                        foreach (var bike in _bikes)
+                        {
+                            sw.Write(bike + Environment.NewLine);
+                        }
+                        sw.Close();
+                    }
+                    st.Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message, ex);
+            }
+        }
+
+        private void SaveToFileStream()
         {
             Stream st = null;
             StreamWriter sw = null;
             try
             {
                 st = new FileStream(@"D:\Work\ITA\base.txt",
-                    FileMode.Open);
+                    FileMode.CreateNew);
                 sw = new StreamWriter(st);
                 foreach (var bike in _bikes)
                 {
@@ -121,10 +169,12 @@ namespace WF2
                 if (sw != null)
                 {
                     sw.Close();
+                    sw.Dispose();
                 }
                 if (st != null)
                 {
                     st.Close();
+                    st.Dispose();
                 }
             }
         }
