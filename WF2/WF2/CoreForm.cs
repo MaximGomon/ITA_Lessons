@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -82,6 +83,50 @@ namespace WF2
         private void bikeToolStripMenuItem_MouseHover(object sender, EventArgs e)
         {
             toolTip.Show(((ToolStripMenuItem)sender).ToolTipText, mainMenuStrip);
+        }
+
+        private void saveToFileToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                SaveToFile();
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+            
+        }
+
+        private void SaveToFile()
+        {
+            Stream st = null;
+            StreamWriter sw = null;
+            try
+            {
+                st = new FileStream(@"D:\Work\ITA\base.txt",
+                    FileMode.Open);
+                sw = new StreamWriter(st);
+                foreach (var bike in _bikes)
+                {
+                    sw.Write(bike + Environment.NewLine);
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message, ex);
+            }
+            finally
+            {
+                if (sw != null)
+                {
+                    sw.Close();
+                }
+                if (st != null)
+                {
+                    st.Close();
+                }
+            }
         }
     }
 }

@@ -21,7 +21,7 @@ namespace WF2
 
         public Mountain GetMountain()
         {
-            return new Mountain(Id) { Name = tbName.Text };
+            return new Mountain(Id) { Name = tbName.Text, Size = tbSIze.Text.GetInt()};
         }
     }
 }

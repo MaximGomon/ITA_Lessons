@@ -21,7 +21,7 @@ namespace WF2
 
         public HardTail GetHardTail()
         {
-            return new HardTail(Id) { Name = tbName.Text };
+            return new HardTail(Id) { Name = tbName.Text, Size = tbSIze.Text.GetInt()};
         }
     }
 }
