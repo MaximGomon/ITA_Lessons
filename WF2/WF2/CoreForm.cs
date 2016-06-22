@@ -33,14 +33,19 @@ namespace WF2
                 var bike = ab.GetCreatedBike();
                 _bikes.Add(bike);
 
-                var item = new ListViewItem(bike.Name);
-                item.SubItems.Add(bike.Size.ToString());
-                item.SubItems.Add(_bikeId.ToString());
-
-                lvBikes.Items.Add(item);
+                AddItemToListView(bike);
 
                 _bikeId ++;
             }
+        }
+
+        private void AddItemToListView(Bike bike)
+        {
+            var item = new ListViewItem(bike.Name);
+            item.SubItems.Add(bike.Size.ToString());
+            item.SubItems.Add(bike.Id.ToString());
+
+            lvBikes.Items.Add(item);
         }
 
         private void removeToolStripMenuItem_Click(object sender, EventArgs e)
@@ -50,7 +55,57 @@ namespace WF2
 
         private void openSavedToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            OpenFileDialog openFile = new OpenFileDialog();
+            openFile.Filter = "Text files|*.txt";
+            openFile.Multiselect = false;
+            openFile.InitialDirectory = Directory.GetCurrentDirectory();
 
+            if(openFile.ShowDialog() == DialogResult.OK)
+            {
+                string fileText = File.ReadAllText(openFile.FileName);
+
+                List<string> stringBikes = fileText.Split(Environment.NewLine.ToCharArray(), 
+                    StringSplitOptions.RemoveEmptyEntries).ToList();
+
+                _bikes.Clear();
+                lvBikes.Items.Clear();
+
+                foreach (var stringBike in stringBikes)
+                {
+                    var stringBikeType = stringBike.Split(';').ToList()[3];
+                    BikeType type;
+                    Enum.TryParse(stringBikeType, true, out type);
+
+                    switch (type)
+                    {
+                            case BikeType.Cross:
+                            Cross bike;
+                            if(Cross.TryParse(stringBike, out bike))
+                            {
+                                _bikes.Add(bike);
+                                AddItemToListView(bike);
+                            }
+                            break;
+                        case BikeType.Mountain:
+                            Mountain mbike;
+                            if (Mountain.TryParse(stringBike, out mbike))
+                            {
+                                _bikes.Add(mbike);
+                                AddItemToListView(mbike);
+                            }
+                            break;
+                        case BikeType.HardTail:
+                            HardTail hbike;
+                            if (HardTail.TryParse(stringBike, out hbike))
+                            {
+                                _bikes.Add(hbike);
+                                AddItemToListView(hbike);
+                            }
+                            break;
+                    }
+                    
+                }
+            }
         }
 
         private void coreForm_FormClosing(object sender, FormClosingEventArgs e)
@@ -73,8 +128,19 @@ namespace WF2
                     if (bike.Id == id)
                     {
                         scContent.Panel2.Controls.Clear();
-                        scContent.Panel2.Controls.Add(new UcCross((Cross)bike) {Dock = DockStyle.Fill});
-                        break;
+                        
+                        if (bike.GetType() == typeof (Cross))
+                        {
+                            scContent.Panel2.Controls.Add(new UcCross((Cross)bike) {Dock = DockStyle.Fill});
+                        }
+                        else if (bike.GetType() == typeof (Mountain))
+                        {
+                            scContent.Panel2.Controls.Add(new UcMountain((Mountain)bike) { Dock = DockStyle.Fill });
+                        }
+                        else if (bike.GetType() == typeof(HardTail))
+                        {
+                            scContent.Panel2.Controls.Add(new UcHardTail((HardTail)bike) { Dock = DockStyle.Fill });
+                        }
                     }
                 }
             }
@@ -89,7 +155,7 @@ namespace WF2
         {
             try
             {
-                SaveToFileStreamSafe();
+                SaveToFileSimple();
                 MessageBox.Show("Information", "File saved", 
                     MessageBoxButtons.OK, 
                     MessageBoxIcon.Information);
@@ -119,7 +185,6 @@ namespace WF2
             {
                 throw new Exception(ex.Message, ex);
             }
-            
         }
 
         private void SaveToFileStreamSafe()

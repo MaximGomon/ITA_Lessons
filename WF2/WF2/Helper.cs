@@ -1,4 +1,6 @@
-﻿namespace WF2
+﻿using System;
+
+namespace WF2
 {
     public static class Helper
     {
@@ -17,6 +19,15 @@
                 return i;
             }
             return -1;
+        }
+
+        public static BikeType GetSelectedBikeType(string source)
+        {
+            BikeType type = (BikeType)Enum.Parse(
+                typeof(BikeType),
+                source
+                );
+            return type;
         }
     }
 }

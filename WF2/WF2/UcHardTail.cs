@@ -19,6 +19,14 @@ namespace WF2
             Id = bikeId;
         }
 
+        public UcHardTail(HardTail bike)
+        {
+            InitializeComponent();
+            tbSIze.Text = bike.Size.ToString();
+            tbName.Text = bike.Name;
+            this.Enabled = false;
+        }
+
         public HardTail GetHardTail()
         {
             return new HardTail(Id) { Name = tbName.Text, Size = tbSIze.Text.GetInt()};

@@ -31,7 +31,7 @@ namespace WF2
 
         private void cbBikeType_SelectedIndexChanged(object sender, EventArgs e)
         {
-            var type = GetSelectedBikeType();
+            var type = Helper.GetSelectedBikeType(cbBikeType.SelectedItem.ToString());
             switch (type)
             {
                     case BikeType.Cross:
@@ -49,18 +49,11 @@ namespace WF2
             }
         }
 
-        private BikeType GetSelectedBikeType()
-        {
-            BikeType type = (BikeType) Enum.Parse(
-                typeof (BikeType),
-                cbBikeType.SelectedItem.ToString()
-                );
-            return type;
-        }
+        
 
         public Bike GetCreatedBike()
         {
-            var type = GetSelectedBikeType();
+            var type = Helper.GetSelectedBikeType(cbBikeType.SelectedItem.ToString());
             switch (type)
             {
                 case BikeType.Cross:
@@ -89,7 +82,7 @@ namespace WF2
 
         private bool ValidateControls()
         {
-            var type = GetSelectedBikeType();
+            var type = Helper.GetSelectedBikeType(cbBikeType.SelectedItem.ToString());
             switch (type)
             {
                 case BikeType.Cross:

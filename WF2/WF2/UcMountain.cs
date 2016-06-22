@@ -19,6 +19,14 @@ namespace WF2
             Id = bikeId;
         }
 
+        public UcMountain(Mountain bike)
+        {
+            InitializeComponent();
+            tbSIze.Text = bike.Size.ToString();
+            tbName.Text = bike.Name;
+            this.Enabled = false;
+        }
+
         public Mountain GetMountain()
         {
             return new Mountain(Id) { Name = tbName.Text, Size = tbSIze.Text.GetInt()};
