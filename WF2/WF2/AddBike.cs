@@ -19,7 +19,7 @@ namespace WF2
         {
             InitializeComponent();
 
-            ucMountain = new UcMountain(bikeId);
+            ucHardTail = new UcHardTail(bikeId);
             ucCross = new UcCross(bikeId);
             ucMountain = new UcMountain(bikeId);
 

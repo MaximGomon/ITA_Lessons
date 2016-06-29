@@ -24,3 +24,4 @@ D:\Work\ITA\WF2\WF2\obj\Debug\WF2.UcCross.resources
 D:\Work\ITA\WF2\WF2\obj\Debug\WF2.UcHardTail.resources
 D:\Work\ITA\WF2\WF2\obj\Debug\WF2.UcMountain.resources
 D:\Work\ITA\WF2\WF2\obj\Debug\WF2.csproj.GenerateResource.Cache
+D:\Work\ITA\WF2\WF2\obj\Debug\WF2.About.resources

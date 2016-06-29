@@ -243,5 +243,11 @@ namespace WF2
                 }
             }
         }
+
+        private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            About ab = new About();
+            ab.ShowDialog();
+        }
     }
 }
