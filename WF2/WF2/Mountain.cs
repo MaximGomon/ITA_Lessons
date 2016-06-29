@@ -1,11 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Serialization;
 
 namespace WF2
 {
+    [DataContract]
     public class Mountain : Bike
     {
+        public Mountain()
+        {
+            
+        }
         public Mountain(int id) : base(id)
         {
         }

@@ -1,12 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Serialization;
 using System.Runtime.Serialization.Formatters;
 
 namespace WF2
 {
+    [DataContract]
     public class Cross : Bike
     {
+        public Cross()
+        {
+            
+        }
         public Cross(int id) : base(id)
         {
         }

@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Serialization;
 
 namespace WF2
 {
@@ -155,14 +156,14 @@ namespace WF2
         {
             try
             {
-                SaveToFileSimple();
-                MessageBox.Show("Information", "File saved", 
+                SerializeToFile();
+                MessageBox.Show("File saved", "Information",
                     MessageBoxButtons.OK, 
                     MessageBoxIcon.Information);
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error", ex.Message,
+                MessageBox.Show(ex.Message, "Error",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Error);
             }
@@ -248,6 +249,17 @@ namespace WF2
         {
             About ab = new About();
             ab.ShowDialog();
+        }
+
+        public void SerializeToFile()
+        {
+            using (var stream = new FileStream(@"D:\Work\ITA\Ser.xml", FileMode.OpenOrCreate))
+            {
+                var serializer = new XmlSerializer(typeof(List<Bike>), 
+                    new []{typeof(Cross), typeof(HardTail), typeof(Mountain)});
+                
+                serializer.Serialize(stream, _bikes);
+            }
         }
     }
 }
