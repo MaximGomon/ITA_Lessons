@@ -56,55 +56,67 @@ namespace WF2
 
         private void openSavedToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            //string filter = "Text files|*.txt";
+            string filter = "Xml files|*.xml";
+            OpenSavedFile(filter);
+        }
+
+        private void OpenSavedFile(string filter)
+        {
             OpenFileDialog openFile = new OpenFileDialog();
-            openFile.Filter = "Text files|*.txt";
+            openFile.Filter = filter;
             openFile.Multiselect = false;
             openFile.InitialDirectory = Directory.GetCurrentDirectory();
 
-            if(openFile.ShowDialog() == DialogResult.OK)
+            if (openFile.ShowDialog() == DialogResult.OK)
             {
-                string fileText = File.ReadAllText(openFile.FileName);
+                //ReadFromTxt(openFile.FileName);
+                DeSerializeFromFile(openFile.FileName);
+            }
+        }
 
-                List<string> stringBikes = fileText.Split(Environment.NewLine.ToCharArray(), 
-                    StringSplitOptions.RemoveEmptyEntries).ToList();
+        private void ReadFromTxt(string fileName)
+        {
+            string fileText = File.ReadAllText(fileName);
 
-                _bikes.Clear();
-                lvBikes.Items.Clear();
+            List<string> stringBikes = fileText.Split(Environment.NewLine.ToCharArray(),
+                StringSplitOptions.RemoveEmptyEntries).ToList();
 
-                foreach (var stringBike in stringBikes)
+            _bikes.Clear();
+            lvBikes.Items.Clear();
+
+            foreach (var stringBike in stringBikes)
+            {
+                var stringBikeType = stringBike.Split(';').ToList()[3];
+                BikeType type;
+                Enum.TryParse(stringBikeType, true, out type);
+
+                switch (type)
                 {
-                    var stringBikeType = stringBike.Split(';').ToList()[3];
-                    BikeType type;
-                    Enum.TryParse(stringBikeType, true, out type);
-
-                    switch (type)
-                    {
-                            case BikeType.Cross:
-                            Cross bike;
-                            if(Cross.TryParse(stringBike, out bike))
-                            {
-                                _bikes.Add(bike);
-                                AddItemToListView(bike);
-                            }
-                            break;
-                        case BikeType.Mountain:
-                            Mountain mbike;
-                            if (Mountain.TryParse(stringBike, out mbike))
-                            {
-                                _bikes.Add(mbike);
-                                AddItemToListView(mbike);
-                            }
-                            break;
-                        case BikeType.HardTail:
-                            HardTail hbike;
-                            if (HardTail.TryParse(stringBike, out hbike))
-                            {
-                                _bikes.Add(hbike);
-                                AddItemToListView(hbike);
-                            }
-                            break;
-                    }
-                    
+                    case BikeType.Cross:
+                        Cross bike;
+                        if (Cross.TryParse(stringBike, out bike))
+                        {
+                            _bikes.Add(bike);
+                            AddItemToListView(bike);
+                        }
+                        break;
+                    case BikeType.Mountain:
+                        Mountain mbike;
+                        if (Mountain.TryParse(stringBike, out mbike))
+                        {
+                            _bikes.Add(mbike);
+                            AddItemToListView(mbike);
+                        }
+                        break;
+                    case BikeType.HardTail:
+                        HardTail hbike;
+                        if (HardTail.TryParse(stringBike, out hbike))
+                        {
+                            _bikes.Add(hbike);
+                            AddItemToListView(hbike);
+                        }
+                        break;
                 }
             }
         }
@@ -259,6 +271,20 @@ namespace WF2
                     new []{typeof(Cross), typeof(HardTail), typeof(Mountain)});
                 
                 serializer.Serialize(stream, _bikes);
+            }
+        }
+
+        public void DeSerializeFromFile(string fileName)
+        {
+            if(File.Exists(fileName))
+            {
+                using (var stream = new FileStream(fileName, FileMode.Open))
+                {
+                    var serializer = new XmlSerializer(typeof(List<Bike>),
+                        new[] { typeof(Cross), typeof(HardTail), typeof(Mountain) });
+
+                    _bikes = (List<Bike>)serializer.Deserialize(stream);
+                }
             }
         }
     }
