@@ -13,9 +13,11 @@ namespace AdoNetSample
     {
         static void Main(string[] args)
         {
+            ReadFromBase();
+            Console.ReadKey();
         }
 
-        private void ReadFromBase()
+        private static void ReadFromBase()
         {
             var conString = ConfigurationManager.AppSettings["ConnectionString"];
 
@@ -27,7 +29,7 @@ namespace AdoNetSample
                                       Employees e
                                     WHERE 
                                       LEN(e.Name) > @len";
-                var command = new SqlCommand(commandText);
+                var command = new SqlCommand(commandText, connection);
                 var parameter = new SqlParameter("@len", SqlDbType.Int);
                 parameter.Value = 20;
 

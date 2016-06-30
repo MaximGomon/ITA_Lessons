@@ -1,1 +1,6 @@
 D:\Work\ITA\AdoNetSample\AdoNetSample\bin\Debug\AdoNetSample.exe.config
+D:\Work\ITA\AdoNetSample\AdoNetSample\bin\Debug\AdoNetSample.exe
+D:\Work\ITA\AdoNetSample\AdoNetSample\bin\Debug\AdoNetSample.pdb
+D:\Work\ITA\AdoNetSample\AdoNetSample\obj\Debug\AdoNetSample.csprojResolveAssemblyReference.cache
+D:\Work\ITA\AdoNetSample\AdoNetSample\obj\Debug\AdoNetSample.exe
+D:\Work\ITA\AdoNetSample\AdoNetSample\obj\Debug\AdoNetSample.pdb
