@@ -2,9 +2,16 @@
 
 namespace FabricExample
 {
-    public class Arbalet : Weapon
+    //public class Arbalet : Weapon
+    //{
+    //    public override void Hit()
+    //    {
+    //        Console.WriteLine("Стреляем из арбалета");
+    //    }
+    //}
+    public class Arbalet : IWeapon
     {
-        public override void Hit()
+        public void Hit()
         {
             Console.WriteLine("Стреляем из арбалета");
         }

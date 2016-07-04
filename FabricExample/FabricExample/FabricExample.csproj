@@ -46,6 +46,7 @@
     <Compile Include="Arbalet.cs" />
     <Compile Include="Factories\ElfFactory.cs" />
     <Compile Include="Factories\HeroFactory.cs" />
+    <Compile Include="Factories\SuperHeroFactory.cs" />
     <Compile Include="Factories\VoinFactory.cs" />
     <Compile Include="FlyMovement.cs" />
     <Compile Include="Hero.cs" />
@@ -54,10 +55,12 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RunMovement.cs" />
     <Compile Include="Sword.cs" />
-    <Compile Include="Weapon.cs" />
+    <Compile Include="IWeapon.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="FactoriesDiagram.cd" />
+    <None Include="WeaponDiagram.cd" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

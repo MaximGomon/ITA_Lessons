@@ -2,9 +2,16 @@
 
 namespace FabricExample
 {
-    public class RunMovement : Movement
+    //public class RunMovement : Movement
+    //{
+    //    public override void Move()
+    //    {
+    //        Console.WriteLine("Бежим");
+    //    }
+    //}
+    public class RunMovement : IMovement
     {
-        public override void Move()
+        public void Move()
         {
             Console.WriteLine("Бежим");
         }

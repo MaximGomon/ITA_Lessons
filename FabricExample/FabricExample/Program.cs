@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using FabricExample.Factories;
 
 namespace FabricExample
@@ -18,6 +14,10 @@ namespace FabricExample
             Hero voin = new Hero(new VoinFactory());
             voin.Hit();
             voin.Run();
+
+            var superVoin = new Hero(new SuperHeroFactory());
+            superVoin.Hit();
+            superVoin.Run();
 
             Console.ReadLine();
         }

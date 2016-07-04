@@ -1,7 +1,11 @@
 ﻿namespace FabricExample
 {
-    public abstract class Movement
+    //public abstract class Movement
+    //{
+    //    public abstract void Move();
+    //}
+    public interface IMovement
     {
-        public abstract void Move();
+        void Move();
     }
 }
