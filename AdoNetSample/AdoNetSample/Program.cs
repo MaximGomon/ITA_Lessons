@@ -3,9 +3,6 @@ using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace AdoNetSample
 {
@@ -13,14 +10,18 @@ namespace AdoNetSample
     {
         static void Main(string[] args)
         {
-            ReadFromBase();
+            var data = ReadFromBase();
+            foreach (var employee in data)
+            {
+                Console.WriteLine(employee);
+            }
             Console.ReadKey();
         }
 
-        private static void ReadFromBase()
+        private static List<Employee> ReadFromBase()
         {
             var conString = ConfigurationManager.AppSettings["ConnectionString"];
-
+            List<Employee> dataFromDb = new List<Employee>();
             using (var connection = new SqlConnection(conString))
             {
                 string commandText = @"SELECT DISTINCT
@@ -38,14 +39,13 @@ namespace AdoNetSample
                 connection.Open();
                 using (var reader = command.ExecuteReader())
                 {
-                    List<dynamic> dataFromDb = new List<dynamic>();
                     while (reader.Read())
                     {
-                        var item = new
+                        var item = new Employee
                         {
                             Id = int.Parse(reader[0].ToString()),
                             Name = reader[1].ToString(),
-                            BirthDay = reader[2].GetType() != typeof (DBNull)
+                            BirthDate = reader[2].GetType() != typeof (DBNull)
                                 ? Convert.ToDateTime(reader[2])
                                 : new DateTime(),
                             Email = reader[3].GetType() != typeof (DBNull)
@@ -59,6 +59,7 @@ namespace AdoNetSample
                     }
                 }
             }
+            return dataFromDb;
         }
     }
 }
