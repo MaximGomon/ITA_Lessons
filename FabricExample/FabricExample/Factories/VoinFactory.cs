@@ -2,12 +2,12 @@
 {
     public class VoinFactory : HeroFactory//IHeroFactory
     {
-        public override Movement CreateMovement()
+        public override IMovement CreateMovement()
         {
             return new RunMovement();
         }
 
-        public override Weapon CreateWeapon()
+        public override IWeapon CreateWeapon()
         {
             return new Sword();
         }

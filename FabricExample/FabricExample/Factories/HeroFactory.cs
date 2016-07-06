@@ -2,8 +2,8 @@
 {
     public abstract class HeroFactory
     {
-        public abstract Movement CreateMovement();
-        public abstract Weapon CreateWeapon();
+        public abstract IMovement CreateMovement();
+        public abstract IWeapon CreateWeapon();
     }
 
     //public interface IHeroFactory

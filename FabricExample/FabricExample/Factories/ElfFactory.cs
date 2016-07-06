@@ -2,12 +2,12 @@
 {
     public class ElfFactory : HeroFactory//IHeroFactory
     {
-        public override Movement CreateMovement()
+        public override IMovement CreateMovement()
         {
             return new FlyMovement();
         }
 
-        public override Weapon CreateWeapon()
+        public override IWeapon CreateWeapon()
         {
             return new Arbalet();
         }

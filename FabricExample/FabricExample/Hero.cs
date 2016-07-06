@@ -9,8 +9,8 @@ namespace FabricExample
 {
     public class Hero
     {
-        private Weapon _weapon;
-        private Movement _movement;
+        private IWeapon _weapon;
+        private IMovement _movement;
         //public Hero(IHeroFactory factory)
         //{
         //    _weapon = factory.CreateWeapon();
