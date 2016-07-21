@@ -38,9 +38,10 @@ namespace EfExample
 
         public override string ToString()
         {
-            return string.Format("Name: {0} {1}{7}Birthdate: {2}{7} Position: {3}{7}Department: {4}{7} Salary: {5}{7} Manager: {6} {8}{7}", 
-                FirstName, LastName, BirthDate.ToShortDateString(), Position.Name, Department.Name, Salary, Manager.FirstName, Environment.NewLine,
-                Manager.LastName);
+            return string.Format("Name: {0} {1}{7}Birthdate: {2}{7}Position: {3}{7}Department: {4}{7}Salary: {5}{7}Manager: {6} {8}{7}", 
+                FirstName, LastName, BirthDate.ToShortDateString(), Position.Name, Department.Name, Salary, 
+                Manager == null ? String.Empty : Manager.FirstName, Environment.NewLine,
+                Manager == null ? String.Empty : Manager.LastName);
         }
     }
 }

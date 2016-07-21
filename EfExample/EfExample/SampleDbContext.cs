@@ -1,14 +1,13 @@
 ﻿using System.Data.Entity;
-using EfExample;
 
-namespace EfSample
+namespace EfExample
 {
     public class SampleDbContext : DbContext
     {
         public SampleDbContext() : base("sample")
         {
             //Set db initializer for default value of dictionary on create db
-            Database.SetInitializer<SampleDbContext>(new SampleDbInitializer());
+            Database.SetInitializer(new SampleDbInitializer());
         }
 
         public DbSet<Employee> Employees { get; set; }

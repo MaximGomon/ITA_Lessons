@@ -5,14 +5,14 @@ namespace EfExample.Migrations
     using System.Data.Entity.Migrations;
     using System.Linq;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<EfSample.SampleDbContext>
+    internal sealed class Configuration : DbMigrationsConfiguration<EfExample.SampleDbContext>
     {
         public Configuration()
         {
-            AutomaticMigrationsEnabled = false;
+            AutomaticMigrationsEnabled = true;
         }
 
-        protected override void Seed(EfSample.SampleDbContext context)
+        protected override void Seed(EfExample.SampleDbContext context)
         {
             //  This method will be called after migrating to the latest version.
 
