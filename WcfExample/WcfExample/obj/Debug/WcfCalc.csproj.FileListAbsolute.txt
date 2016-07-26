@@ -1,0 +1,6 @@
+D:\Work\ITA\WcfExample\WcfExample\bin\Debug\WcfExample.exe.config
+D:\Work\ITA\WcfExample\WcfExample\bin\Debug\WcfExample.exe
+D:\Work\ITA\WcfExample\WcfExample\bin\Debug\WcfExample.pdb
+D:\Work\ITA\WcfExample\WcfExample\obj\Debug\WcfCalc.csprojResolveAssemblyReference.cache
+D:\Work\ITA\WcfExample\WcfExample\obj\Debug\WcfExample.exe
+D:\Work\ITA\WcfExample\WcfExample\obj\Debug\WcfExample.pdb
