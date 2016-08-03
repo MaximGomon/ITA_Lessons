@@ -16,10 +16,10 @@ namespace WcfExample.CalcServiceReference {
     public interface ICalcService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICalcService/Sum", ReplyAction="http://tempuri.org/ICalcService/SumResponse")]
-        int Sum(int a, int b);
+        int Sum(double a, string b);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICalcService/Sum", ReplyAction="http://tempuri.org/ICalcService/SumResponse")]
-        System.Threading.Tasks.Task<int> SumAsync(int a, int b);
+        System.Threading.Tasks.Task<int> SumAsync(double a, string b);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -49,11 +49,11 @@ namespace WcfExample.CalcServiceReference {
                 base(binding, remoteAddress) {
         }
         
-        public int Sum(int a, int b) {
+        public int Sum(double a, string b) {
             return base.Channel.Sum(a, b);
         }
         
-        public System.Threading.Tasks.Task<int> SumAsync(int a, int b) {
+        public System.Threading.Tasks.Task<int> SumAsync(double a, string b) {
             return base.Channel.SumAsync(a, b);
         }
     }

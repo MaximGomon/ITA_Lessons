@@ -11,9 +11,9 @@ namespace WcfServer
     // NOTE: In order to launch WCF Test Client for testing this service, please select CalcService.svc or CalcService.svc.cs at the Solution Explorer and start debugging.
     public class CalcService : ICalcService
     {
-        public int Sum(int a, int b)
+        public int Sum(double a, string b)
         {
-            return a + b;
+            return (int)(a + int.Parse(b));
         }
     }
 }

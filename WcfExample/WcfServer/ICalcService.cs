@@ -12,6 +12,6 @@ namespace WcfServer
     public interface ICalcService
     {
         [OperationContract]
-        int Sum(int a, int b);
+        int Sum(double a, string b);
     }
 }
