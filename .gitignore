@@ -1,6 +1,7 @@
 Ser.xml
-EfExample/EfExample/bin/
-EfExample/EfExample/obj/
-EfExample/packages/
-FabricExample/FabricExample/bin/
-JsonFileReading/packages/
+*.cache
+obj
+bin
+packages
+.vs
+*.user
