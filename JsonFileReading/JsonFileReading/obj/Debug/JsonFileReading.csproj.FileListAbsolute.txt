@@ -1,6 +1,0 @@
-D:\Work\ITA\JsonFileReading\JsonFileReading\bin\Debug\JsonFileReading.exe.config
-D:\Work\ITA\JsonFileReading\JsonFileReading\bin\Debug\JsonFileReading.exe
-D:\Work\ITA\JsonFileReading\JsonFileReading\bin\Debug\JsonFileReading.pdb
-D:\Work\ITA\JsonFileReading\JsonFileReading\obj\Debug\JsonFileReading.csprojResolveAssemblyReference.cache
-D:\Work\ITA\JsonFileReading\JsonFileReading\obj\Debug\JsonFileReading.exe
-D:\Work\ITA\JsonFileReading\JsonFileReading\obj\Debug\JsonFileReading.pdb
