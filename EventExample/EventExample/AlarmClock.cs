@@ -14,11 +14,11 @@ namespace EventExample
 
         protected virtual void OnAlarm(AlarmEventArgs e)
         {
-            AlarmEventHandler handler = AlarmEvent;
-            if (handler != null)
-            {
-                handler(this, e);
-            }
+            //AlarmEventHandler handler = AlarmEvent;
+            //if (handler != null)
+            //{
+                AlarmEvent(this, e);
+            //}
         }
 
         // This alarm clock does not have 

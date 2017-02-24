@@ -8,9 +8,10 @@ namespace EventExample
         {
             AlarmClock clock = new AlarmClock();
 
-            //clock.AlarmEvent += new AlarmEventHandler(WakeMeUp.AlarmRang);
-            clock.AlarmEvent += ClockOnAlarmEvent;
-            clock.AlarmEvent += SecondClockOnAlarmEvent;
+            clock.AlarmEvent += WakeMeUp.AlarmRang;
+            clock.AlarmEvent -= WakeMeUp.AlarmRang;
+            //clock.AlarmEvent += ClockOnAlarmEvent;
+            //clock.AlarmEvent += SecondClockOnAlarmEvent;
             clock.Start();
         }
 

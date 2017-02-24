@@ -4,7 +4,7 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="a" type="xs:double" />
-        <xs:element minOccurs="0" name="b" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="b" type="xs:double" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

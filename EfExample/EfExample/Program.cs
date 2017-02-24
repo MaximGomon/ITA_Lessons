@@ -15,30 +15,31 @@ namespace EfExample
             //using context for doing something with db
             using (var context = new SampleDbContext())
             {
+                // = Console.Out;
                 //add new employee to context
-                //context.Employees.Add(new Employee
-                //{
-                //    Position = context.Positions.First(x => x.Code == 1),
-                //    Department = context.Departments.First(x => x.Code == 1),
-                //    BirthDate = new DateTime(1976, 08, 14),
-                //    FirstName = "Oleg",
-                //    LastName = "Korewat",
-                //    Salary = 5000.0
-                //});
+                context.Employees.Add(new Employee
+                {
+                    Position = context.Positions.First(x => x.Code == 1),
+                    Department = context.Departments.First(x => x.Code == 1),
+                    BirthDate = new DateTime(),
+                    FirstName = "Oleg",
+                    LastName = "Korewat",
+                    Salary = 5000.0
+                });
 
                 //save changes from context to db
-                //context.SaveChanges();
+                context.SaveChanges();
 
-                var emp = from e in context.Employees
-                    where e.FirstName.Length > 3 select e ;
+                //var emp = from e in context.Employees
+                //    where e.FirstName.Length > 3 select e ;
 
-                foreach (var employee in context.Employees
-                    .Include(x => x.Department)
-                    .Include(x => x.Position))
-                {
-                    Console.WriteLine(employee);
-                }
-                emp.ToList();
+                //foreach (var employee in context.Employees
+                //    .Include(x => x.Department)
+                //    .Include(x => x.Position))
+                //{
+                //    Console.WriteLine(employee);
+                //}
+                //emp.ToList();
             }
             Console.ReadKey();
         }

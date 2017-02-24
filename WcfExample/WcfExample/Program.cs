@@ -12,13 +12,15 @@ namespace WcfExample
         static void Main(string[] args)
         {
             var client = new CalcServiceClient();
-            Console.WriteLine(client.Sum(3, "4"));
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.BackgroundColor = ConsoleColor.White;
+            Console.WriteLine(client.Sum(3, 4));
             Console.ReadKey();
-            MyList<Opperand> list = new MyList<Opperand>();
-            list.Add(new Opperand());
-            list.Add(new OpperandMinus());
-            list.Add(new OpperandPlus());
-            list.Add(new Tree());
+            //MyList<Opperand> list = new MyList<Opperand>();
+            //list.Add(new Opperand());
+            //list.Add(new OpperandMinus());
+            //list.Add(new OpperandPlus());
+            //list.Add(new Tree());
         }
     }
 

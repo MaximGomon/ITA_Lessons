@@ -1,5 +1,4 @@
-﻿using System;
-using System.Runtime.Serialization;
+﻿using System.Runtime.Serialization;
 
 namespace JsonFileReading
 {
@@ -18,7 +17,11 @@ namespace JsonFileReading
         public double PromoValue { get; set; }
         [DataMember(Name = "fio")]
         public string Fio { get; set; }
-        [DataMember(Name = "search_dump")]
-        public SearchDump SearchDump { get; set; }
+        //[DataMember(Name = "search_dump")]
+        //public SearchDump SearchDump { get; set; }
+        public override string ToString()
+        {
+            return $"{Fio} {Id} Start date:{StartDate}";
+        }
     }
 }

@@ -17,6 +17,8 @@ namespace EventExample
                     Console.WriteLine(" Stop Alarm? Enter Q");
                     string input = Console.ReadLine();
 
+                    string s = $"insert int Table ({nameof(AlarmClock.IsStop)}, Name) values (1 , N'eee')";
+
                     //if(input == "Y" || input == "y")
 
                     //if(String.Equals(input, "Y", StringComparison.InvariantCultureIgnoreCase))

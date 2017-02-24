@@ -1,13 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Runtime.Serialization;
 using System.Runtime.Serialization.Json;
-using System.Xml;
 using System.Xml.Serialization;
 using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
-using Newtonsoft.Json.Serialization;
 
 namespace JsonFileReading
 {
@@ -15,25 +11,40 @@ namespace JsonFileReading
     {
         static void Main(string[] args)
         {
-            var ser = new DataContractJsonSerializer(typeof (Order), new List<Type>
-            {
-                typeof(SearchDump),
-                typeof(Product)
-            });
-            Order order = (Order)ser.ReadObject(new FileStream(@"D:\new.json", FileMode.Open, FileAccess.Read));
+            //var intLIst = Extensions.CreateList<int>();
+            var stringList = Extensions.CreateList<string>();
 
-            var xmlSerializer = new XmlSerializer(typeof(Order), new Type[]
-            {
-                typeof(SearchDump),
-                typeof(Product)
-            });
+            //string myInput = "Hello.My name";
+            //Console.WriteLine(myInput.GetLastAfterPoint());
+            //Console.ReadKey();
+            Order simple = JsonConvert.DeserializeObject<Order>(File.ReadAllText(@"D:\new.json"));
+
+            File.WriteAllText(@"D:\My.json", JsonConvert.SerializeObject(simple));
+
+            var ser = new DataContractJsonSerializer(typeof (Order));
+
+            Console.WriteLine(simple);
+
+            Order order = (Order)ser.ReadObject(new FileStream(@"D:\new.json", 
+                FileMode.Open, FileAccess.Read));
+
+            var xmlSerializer = new XmlSerializer(typeof(Order));
+
             using (var fileStream = new FileStream(@"D:\MyXml.xml", FileMode.OpenOrCreate))
             {
                 xmlSerializer.Serialize(fileStream, order);
             }
+
             Order obj = (Order)xmlSerializer.Deserialize(
                 new FileStream(@"D:\MyXml.xml", FileMode.Open));
             Console.ReadKey();
         }
+
+        private static List<Order> GreateList()
+        {
+            return new List<Order>();
+        } 
+
+
     }
 }

@@ -13,24 +13,35 @@ namespace ReflectionExample
     {
         static void Main(string[] args)
         {
-            var assembly = Assembly.GetAssembly(typeof (Car));
+            Console.WriteLine(Assembly.GetExecutingAssembly().FullName);
+            var assembly = Assembly.GetAssembly(typeof(Car));
+
+            //var assembly = Assembly.LoadFile(@"D:\Work\ITA\WF2\WF2\bin\Debug\wf2.exe");
             Console.Write("This is assemly where class Car defined: ");
             Console.WriteLine(assembly.FullName + Environment.NewLine);
             Console.WriteLine("This is all types defined in current assemly:");
+
             foreach (var definedType in assembly.DefinedTypes)
             {
                 Console.WriteLine(definedType.FullName);
             }
             Console.WriteLine();
+
             foreach (var definedType in assembly.DefinedTypes)
             {
                 Console.WriteLine("This all methods which are implemented in class {0}", definedType.FullName);
                 Console.WriteLine();
-                var methods = definedType.DeclaredMethods.Where(x => !x.IsSpecialName);
+                var methods = definedType.DeclaredMethods;//.Where(x => !x.IsSpecialName);
                 foreach (var declaredMethod in methods)
                 {
                     string access = !declaredMethod.IsPrivate ? "public" : "private";
 
+                    //Console.WriteLine(Encoding.UTF8.GetString(declaredMethod.GetMethodBody()?.GetILAsByteArray()));
+
+                    //foreach (var localVariableInfo in declaredMethod.GetMethodBody()?.GetILAsByteArray())// .LocalVariables)
+                    //{
+                    //    Console.WriteLine(localVariableInfo);
+                    //}
                     string parameters = String.Empty;
                     foreach (var item in declaredMethod.GetParameters())
                     {

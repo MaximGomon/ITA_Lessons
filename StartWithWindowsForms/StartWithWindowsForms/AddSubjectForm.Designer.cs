@@ -33,6 +33,8 @@
             this.tbSubjectName = new System.Windows.Forms.TextBox();
             this.btOk = new System.Windows.Forms.Button();
             this.btCancel = new System.Windows.Forms.Button();
+            this.tbId = new System.Windows.Forms.TextBox();
+            this.lbId = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lbName
@@ -54,7 +56,7 @@
             // btOk
             // 
             this.btOk.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.btOk.Location = new System.Drawing.Point(229, 60);
+            this.btOk.Location = new System.Drawing.Point(229, 103);
             this.btOk.Name = "btOk";
             this.btOk.Size = new System.Drawing.Size(75, 23);
             this.btOk.TabIndex = 2;
@@ -64,18 +66,36 @@
             // btCancel
             // 
             this.btCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btCancel.Location = new System.Drawing.Point(310, 60);
+            this.btCancel.Location = new System.Drawing.Point(310, 103);
             this.btCancel.Name = "btCancel";
             this.btCancel.Size = new System.Drawing.Size(75, 23);
             this.btCancel.TabIndex = 3;
             this.btCancel.Text = "Cancel";
             this.btCancel.UseVisualStyleBackColor = true;
             // 
+            // tbId
+            // 
+            this.tbId.Location = new System.Drawing.Point(66, 58);
+            this.tbId.Name = "tbId";
+            this.tbId.Size = new System.Drawing.Size(321, 22);
+            this.tbId.TabIndex = 5;
+            // 
+            // lbId
+            // 
+            this.lbId.AutoSize = true;
+            this.lbId.Location = new System.Drawing.Point(15, 61);
+            this.lbId.Name = "lbId";
+            this.lbId.Size = new System.Drawing.Size(19, 17);
+            this.lbId.TabIndex = 4;
+            this.lbId.Text = "Id";
+            // 
             // AddSubjectForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(397, 93);
+            this.ClientSize = new System.Drawing.Size(402, 138);
+            this.Controls.Add(this.tbId);
+            this.Controls.Add(this.lbId);
             this.Controls.Add(this.btCancel);
             this.Controls.Add(this.btOk);
             this.Controls.Add(this.tbSubjectName);
@@ -88,6 +108,7 @@
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Create new subject";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.AddSubjectForm_FormClosed);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -99,5 +120,7 @@
         private System.Windows.Forms.TextBox tbSubjectName;
         private System.Windows.Forms.Button btOk;
         private System.Windows.Forms.Button btCancel;
+        private System.Windows.Forms.TextBox tbId;
+        private System.Windows.Forms.Label lbId;
     }
 }

@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CarLibrary
 {
@@ -13,11 +10,14 @@ namespace CarLibrary
 
         private void MovCarMove()
         {
+            int i = 0;
             Console.WriteLine("I am moving...");
         }
 
-        private string WhatDoYouWant(string iWantThis, int count)
+        private string WhatDoYouWant(string iWantThis, long count)
         {
+            string s = "hvfyfiys";
+            List<float> myList = new List<float>();
             return String.Format("{0} {1} {2}?", "Are you realy want", iWantThis, count);
         }
     }

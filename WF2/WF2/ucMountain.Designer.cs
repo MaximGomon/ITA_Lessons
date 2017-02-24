@@ -61,7 +61,7 @@
             // 
             // tbSIze
             // 
-            this.tbSIze.Location = new System.Drawing.Point(107, 116);
+            this.tbSIze.Location = new System.Drawing.Point(107, 60);
             this.tbSIze.Name = "tbSIze";
             this.tbSIze.Size = new System.Drawing.Size(100, 22);
             this.tbSIze.TabIndex = 15;
@@ -76,7 +76,7 @@
             // lbSize
             // 
             this.lbSize.AutoSize = true;
-            this.lbSize.Location = new System.Drawing.Point(53, 116);
+            this.lbSize.Location = new System.Drawing.Point(53, 60);
             this.lbSize.Name = "lbSize";
             this.lbSize.Size = new System.Drawing.Size(35, 17);
             this.lbSize.TabIndex = 14;

@@ -25,6 +25,21 @@ namespace StartWithWindowsForms
         //    }
         //}
 
-        public string SubjectName => tbSubjectName.Text.Trim();
+        public Subject Subject
+        {
+            get
+            {
+                return new Subject
+                {
+                    Id = int.Parse(tbId.Text.Trim()),
+                    Name = tbSubjectName.Text.Trim()
+                };
+            }
+        }
+
+        private void AddSubjectForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            //this.Owner.Close();
+        }
     }
 }

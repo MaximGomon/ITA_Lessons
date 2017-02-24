@@ -34,10 +34,10 @@
             this.cbSubjects = new System.Windows.Forms.ComboBox();
             this.cbTaskDone = new System.Windows.Forms.CheckBox();
             this.mainGroupBox = new System.Windows.Forms.GroupBox();
+            this.btAddSubject = new System.Windows.Forms.Button();
             this.lbTask = new System.Windows.Forms.Label();
             this.tbTask = new System.Windows.Forms.TextBox();
             this.lbSubject = new System.Windows.Forms.Label();
-            this.btAddSubject = new System.Windows.Forms.Button();
             this.btViewAllSubject = new System.Windows.Forms.Button();
             this.mainGroupBox.SuspendLayout();
             this.SuspendLayout();
@@ -65,11 +65,6 @@
             // 
             this.cbSubjects.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbSubjects.FormattingEnabled = true;
-            this.cbSubjects.Items.AddRange(new object[] {
-            "C#",
-            "DataBase",
-            "English",
-            "Design"});
             this.cbSubjects.Location = new System.Drawing.Point(83, 33);
             this.cbSubjects.Name = "cbSubjects";
             this.cbSubjects.Size = new System.Drawing.Size(288, 24);
@@ -102,6 +97,16 @@
             this.mainGroupBox.TabStop = false;
             this.mainGroupBox.Text = "General elements";
             // 
+            // btAddSubject
+            // 
+            this.btAddSubject.Location = new System.Drawing.Point(377, 33);
+            this.btAddSubject.Name = "btAddSubject";
+            this.btAddSubject.Size = new System.Drawing.Size(69, 24);
+            this.btAddSubject.TabIndex = 8;
+            this.btAddSubject.Text = "Add";
+            this.btAddSubject.UseVisualStyleBackColor = true;
+            this.btAddSubject.Click += new System.EventHandler(this.btAddSubject_Click);
+            // 
             // lbTask
             // 
             this.lbTask.AutoSize = true;
@@ -126,16 +131,6 @@
             this.lbSubject.Size = new System.Drawing.Size(55, 17);
             this.lbSubject.TabIndex = 5;
             this.lbSubject.Text = "Subject";
-            // 
-            // btAddSubject
-            // 
-            this.btAddSubject.Location = new System.Drawing.Point(377, 33);
-            this.btAddSubject.Name = "btAddSubject";
-            this.btAddSubject.Size = new System.Drawing.Size(69, 24);
-            this.btAddSubject.TabIndex = 8;
-            this.btAddSubject.Text = "Add";
-            this.btAddSubject.UseVisualStyleBackColor = true;
-            this.btAddSubject.Click += new System.EventHandler(this.btAddSubject_Click);
             // 
             // btViewAllSubject
             // 

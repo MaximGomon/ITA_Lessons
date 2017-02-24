@@ -9,7 +9,7 @@ namespace EfExample.Migrations
     {
         public Configuration()
         {
-            AutomaticMigrationsEnabled = true;
+            AutomaticMigrationsEnabled = false;
         }
 
         protected override void Seed(EfExample.SampleDbContext context)

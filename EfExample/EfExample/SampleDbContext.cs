@@ -8,6 +8,7 @@ namespace EfExample
         {
             //Set db initializer for default value of dictionary on create db
             Database.SetInitializer(new SampleDbInitializer());
+            Database.Initialize(true);
         }
 
         public DbSet<Employee> Employees { get; set; }

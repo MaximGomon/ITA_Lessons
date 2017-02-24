@@ -26,7 +26,8 @@ namespace EfExample
         [Required]
         public double Salary { get; set; }
         //Set db type to datetime2, because default is datetime
-        [Column(TypeName = "datetime2")]
+        //[Column(TypeName = "datetime2")]
+        [Required]
         public DateTime BirthDate { get; set; }
         //Make linked entity as virtual for lazy loading works
         public virtual Employee Manager { get; set; }
