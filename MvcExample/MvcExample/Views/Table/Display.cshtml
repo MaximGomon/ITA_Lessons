@@ -1,4 +1,4 @@
-﻿@model List<MvcExample.Models.TableItem>
+﻿@using MvcExample.Models
 @{
     Layout = "~/Views/Shared/_Layout.cshtml";
     ViewBag.Title = "Home";
@@ -13,24 +13,28 @@
             Name
         </div>
     </div>
-        @foreach (var item in Model)
+    <hr />
+
+        @foreach (TableItem item in ViewBag.Items)
         {
             <div class="row">
-                <div class="col-md-3">
+                <div class="col-md-3" style="font-style: oblique; font-weight: bold; color: red">
                     @Html.DisplayFor(x => item.Id)
                 </div>
-                <div class="col-md-9">
+                <div class="col-md-3">
                     @Html.DisplayFor(x => item.Name)
+                </div>
+                <div class="col-md-6">
+                    @Html.ActionLink("Edit", "Edit", new {id = item.Id}, new { @class = "btn btn-default" })
                 </div>
             </div>
         }
     <hr/>
 </div>
 <div>
-    @if (Model.Count == 0)
+    @if (ViewBag.Items.Count == 0)
     {
         @Html.Label("This is no item for display")
     }
 </div>
-@*@Html.TextBox("CountOfItems")*@
-@Html.ActionLink("Draw Items", "Display", new {id = 2}, new {@class = "btn btn-default"})
+@Html.ActionLink("New Item", "Add", null, new { @class = "btn btn-default" })

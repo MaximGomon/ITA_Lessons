@@ -4,11 +4,13 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
+using MvcExample.Models;
 
 namespace MvcExample
 {
     public class MvcApplication : System.Web.HttpApplication
     {
+        public static List<TableItem> Items = new List<TableItem>(); 
         protected void Application_Start()
         {
             AreaRegistration.RegisterAllAreas();
