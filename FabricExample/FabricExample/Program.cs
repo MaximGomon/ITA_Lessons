@@ -19,6 +19,10 @@ namespace FabricExample
             superVoin.Hit();
             superVoin.Run();
 
+            var diggVoin = new Hero(new DiggHeroFactory());
+            diggVoin.Hit();
+            diggVoin.Run();
+
             Console.ReadLine();
         }
     }

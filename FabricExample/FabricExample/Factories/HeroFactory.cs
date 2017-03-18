@@ -8,8 +8,8 @@
 
     //public interface IHeroFactory
     //{
-    //    Movement CreateMovement();
-    //    Weapon CreateWeapon();
+    //    IMovement CreateMovement();
+    //    IWeapon CreateWeapon();
     //}
 
 }

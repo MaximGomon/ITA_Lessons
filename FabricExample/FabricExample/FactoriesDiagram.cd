@@ -7,21 +7,21 @@
       <FileName>Factories\HeroFactory.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="FabricExample.Factories.ElfFactory" Collapsed="true">
+  <Class Name="FabricExample.Factories.ElfFactory">
     <Position X="0.5" Y="2.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAIAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAA=</HashCode>
       <FileName>Factories\ElfFactory.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="FabricExample.Factories.SuperHeroFactory" Collapsed="true">
+  <Class Name="FabricExample.Factories.SuperHeroFactory">
     <Position X="2.5" Y="2.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAIAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAA=</HashCode>
       <FileName>Factories\SuperHeroFactory.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="FabricExample.Factories.VoinFactory" Collapsed="true">
+  <Class Name="FabricExample.Factories.VoinFactory">
     <Position X="4.25" Y="2.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAIAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAA=</HashCode>
