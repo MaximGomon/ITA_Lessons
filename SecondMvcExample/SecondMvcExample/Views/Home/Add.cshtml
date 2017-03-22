@@ -1,0 +1,14 @@
+﻿@model SecondMvcExample.Models.Animal
+
+@{
+    ViewBag.Title = "Add new item";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Add new item</h2>
+@using (Html.BeginForm("Add", "Home", FormMethod.Post))
+{
+    @Html.LabelFor(x => x.Name)
+    @Html.TextBoxFor(x => x.Name)
+    <input type="submit" value="Save" class="btn btn-default" />
+}
