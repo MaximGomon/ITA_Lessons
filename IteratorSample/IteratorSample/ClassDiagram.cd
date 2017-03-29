@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="IteratorSample.CustomCollection&lt;T&gt;" BaseTypeListCollapsed="true">
+    <Position X="4" Y="1.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAACAAAAAQAABAAAAAAAAAAAAAAAAI=</HashCode>
+      <FileName>CustomCollection.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="IteratorSample.CollectionIterator&lt;T&gt;" BaseTypeListCollapsed="true">
+    <Position X="7.25" Y="1.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AgAAACAAAAAAAQQAAAAAAAAAAABAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>CollectionIterator.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Interface Name="IteratorSample.IAggregate&lt;T&gt;">
+    <Position X="2" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAACAAAAAQAAAAAAAAAAAAAAAAAAAI=</HashCode>
+      <FileName>IAggregate.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="IteratorSample.IIterator">
+    <Position X="9.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAAACAAAAAAAQAAAAAAAAAAAABAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>IIterator.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
