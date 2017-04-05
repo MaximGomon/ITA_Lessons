@@ -4,6 +4,22 @@
     {
         public int CountOfElements { get; set; }
 
+        public static MyQueue Queue
+        {
+            get;
+            set;
+        }
+
+        static Chain()
+        {
+            Queue = new MyQueue();
+        }
+
+        public Chain()
+        {
+
+        }
+
         public static implicit operator MyQueue(Chain item)
         {
             return new MyQueue
