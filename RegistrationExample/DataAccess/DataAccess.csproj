@@ -49,6 +49,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Migrations\201704050630186_Init.cs" />
+    <Compile Include="Migrations\201704050630186_Init.Designer.cs">
+      <DependentUpon>201704050630186_Init.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201704050638117_AddDefaultValueToPK.cs" />
+    <Compile Include="Migrations\201704050638117_AddDefaultValueToPK.Designer.cs">
+      <DependentUpon>201704050638117_AddDefaultValueToPK.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="RegDbContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -61,6 +69,14 @@
       <Project>{0b2ba9f9-34c7-4459-ae02-6299af42e2e4}</Project>
       <Name>DbEntity</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201704050630186_Init.resx">
+      <DependentUpon>201704050630186_Init.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201704050638117_AddDefaultValueToPK.resx">
+      <DependentUpon>201704050638117_AddDefaultValueToPK.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

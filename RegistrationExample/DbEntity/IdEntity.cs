@@ -7,9 +7,9 @@ namespace DbEntity
     public class IdEntity
     {
         [Key]
-        //[DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public Guid Id { get; protected set; }
-        protected IdEntity()
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        public Guid Id { get; set; }
+        public IdEntity()
         {
             Id = Guid.NewGuid();
         } 

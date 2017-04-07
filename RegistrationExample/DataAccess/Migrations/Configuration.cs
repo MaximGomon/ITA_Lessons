@@ -1,3 +1,5 @@
+using DbEntity;
+
 namespace DataAccess.Migrations
 {
     using System;
@@ -19,12 +21,14 @@ namespace DataAccess.Migrations
             //  You can use the DbSet<T>.AddOrUpdate() helper extension method 
             //  to avoid creating duplicate seed data. E.g.
             //
-            //    context.People.AddOrUpdate(
-            //      p => p.FullName,
-            //      new Person { FullName = "Andrew Peters" },
-            //      new Person { FullName = "Brice Lambson" },
-            //      new Person { FullName = "Rowan Miller" }
+            //if (!context.Roles.Any(x => x.Name == "Admin"))
+            //{
+            //    context.Roles.AddOrUpdate(
+            //        new Role { Name = "Admin", Id = Guid.NewGuid()},
+            //        new Role { Name = "User", Id = Guid.NewGuid() },
+            //        new Role { Name = "Trusted user", Id = Guid.NewGuid() }
             //    );
+            //}
             //
         }
     }
