@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<SourceJson xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Type>some string</Type>
+  <Property>
+    <Error>
+      <Types>
+        <string>first</string>
+        <string>second</string>
+      </Types>
+      <Item>
+        <Referenced>true</Referenced>
+      </Item>
+    </Error>
+    <Tier>
+      <Tier>
+        <Number>45</Number>
+      </Tier>
+      <Tier>
+        <Number>96</Number>
+      </Tier>
+    </Tier>
+  </Property>
+</SourceJson>

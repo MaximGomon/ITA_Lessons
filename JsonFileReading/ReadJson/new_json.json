@@ -1,0 +1,22 @@
+{
+  "type": "some string",
+  "properties": {
+    "Errors": {
+      "type": [
+        "first",
+        "second"
+      ],
+      "items": {
+        "ref": true
+      }
+    },
+    "NextTier": [
+      {
+        "type": 45
+      },
+      {
+        "type": 96
+      }
+    ]
+  }
+}

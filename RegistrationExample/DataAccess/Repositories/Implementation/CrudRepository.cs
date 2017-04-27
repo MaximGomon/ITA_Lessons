@@ -16,11 +16,6 @@ namespace DataAccess.Repositories
             Context = context;
         }
 
-        public CrudRepository()
-        {
-            Context = new RegDbContext();
-        }
-
         public virtual TEntity GetById(Guid id)
         {
             return Context.Set<TEntity>().Find(id);

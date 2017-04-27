@@ -9,43 +9,43 @@ namespace BusinessLogic.Implementation
 {
     public class CrudLogic<TEntity, TRepository> : ICrudLogic<TEntity> 
         where TEntity : IdEntity 
-        where TRepository : CrudRepository<TEntity>
+        where TRepository : ICrudRepository<TEntity>
     {
-        private readonly TRepository _repository;
+        protected readonly TRepository Repository;
 
         public CrudLogic(TRepository repository)
         {
-            _repository = repository;
+            Repository = repository;
         }
 
         public TEntity GetById(Guid id)
         {
-            return _repository.GetById(id);
+            return Repository.GetById(id);
         }
 
         public IQueryable<TEntity> GetAllItems()
         {
-            return _repository.GetAll();
+            return Repository.GetAll();
         }
 
         public IQueryable<TEntity> FindAll(Expression<Func<TEntity, bool>> predicate)
         {
-            return _repository.Get(predicate);
+            return Repository.Get(predicate);
         }
 
         public void Create(TEntity item)
         {
-            _repository.Save(item);
+            Repository.Save(item);
         }
 
         public void Update(TEntity item)
         {
-            _repository.Update(item);
+            Repository.Update(item);
         }
 
         public void DeleteById(Guid id)
         {
-            _repository.Delete(id);
+            Repository.Delete(id);
         }
     }
 }

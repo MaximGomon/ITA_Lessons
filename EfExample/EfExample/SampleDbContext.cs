@@ -7,8 +7,10 @@ namespace EfExample
         public SampleDbContext() : base("sample")
         {
             //Set db initializer for default value of dictionary on create db
-            Database.SetInitializer(new SampleDbInitializer());
-            Database.Initialize(true);
+            //Database.SetInitializer(new SampleDbInitializer());
+            //Database.Initialize(true);
+            this.Configuration.LazyLoadingEnabled = false;
+            this.Configuration.ProxyCreationEnabled = false;
         }
 
         public DbSet<Employee> Employees { get; set; }

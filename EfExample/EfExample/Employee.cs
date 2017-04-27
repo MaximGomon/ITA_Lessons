@@ -33,9 +33,9 @@ namespace EfExample
         public virtual Employee Manager { get; set; }
         //Set field as not null
         [Required]
-        public virtual Position Position { get; set; }
+        public Position Position { get; set; }
         [Required]
-        public virtual Department Department { get; set; }
+        public Department Department { get; set; }
 
         public override string ToString()
         {

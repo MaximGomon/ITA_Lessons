@@ -29,6 +29,7 @@ namespace RegistrationExample.Models
         public string ConfirmPassword { get; set; }
         [Required]
         public Guid RoleId { get; set; }
+        [Display(Name = "Role")]
         public string RoleName { get; set; }
     }
 }

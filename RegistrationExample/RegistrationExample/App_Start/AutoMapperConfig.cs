@@ -10,6 +10,7 @@ namespace RegistrationExample
         {
             Mapper.Initialize(cfg => {
                 cfg.AddProfile<UserProfile>();
+                cfg.AddProfile<UserModelProfile>();
             });
         }
     }
@@ -24,4 +25,14 @@ namespace RegistrationExample
                 source => source.MapFrom(user => user.Role.Id));
         }
     }
+
+
+    public class UserModelProfile : Profile
+    {
+        public UserModelProfile()
+        {
+            CreateMap<UserViewModel, User>();
+        }
+    }
+
 }
