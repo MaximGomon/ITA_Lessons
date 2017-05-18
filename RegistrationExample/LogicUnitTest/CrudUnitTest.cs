@@ -15,7 +15,7 @@ namespace LogicUnitTest
         public void GetByIdCheck()
         {
             var id = Guid.NewGuid();
-            var mock = new Mock<CrudRepository<IdEntity>>();
+            var mock = new Mock<CrudRepository<IdEntity>>(new RegDbContext());
             mock.Setup(repo => repo.GetById(id))
                 .Returns(new IdEntity {Id = id });
 
@@ -33,7 +33,7 @@ namespace LogicUnitTest
             Guid id = Guid.NewGuid(); //1
             IdEntity item = new IdEntity{Id = id}; //2
 
-            var mock = new Mock<CrudRepository<IdEntity>>();
+            var mock = new Mock<CrudRepository<IdEntity>>(new RegDbContext());
             mock.Setup(repo => repo.Save(item)); //3
             mock.Setup(repo => repo.GetById(id)).Returns(item); //4
 

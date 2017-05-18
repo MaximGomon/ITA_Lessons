@@ -11,6 +11,7 @@ namespace SecondMvcExample.Controllers
     {
         // GET: Home
         [HttpGet]
+        [Logging]
         public ActionResult Display()
         {
             return View();

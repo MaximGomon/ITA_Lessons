@@ -9,6 +9,7 @@ using MvcExample.Models;
 
 namespace MvcExample.Controllers
 {
+ 
     public class TableController : Controller
     {
         [HttpGet]
@@ -19,8 +20,10 @@ namespace MvcExample.Controllers
         }
 
         [HttpGet]
+        [AuthFilter]
         public ActionResult Display()
         {
+            //throw new Exception("This is my exception!");
             ViewBag.Items = MvcApplication.Items;
             //var list = new List<TableItem>();
             //for (int i = 0; i < id; i++)
