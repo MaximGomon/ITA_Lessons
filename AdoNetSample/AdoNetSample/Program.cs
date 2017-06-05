@@ -31,7 +31,7 @@ namespace AdoNetSample
             {
                 //create command text whith we will use in SQLCommand
                 string commandText = @"SELECT DISTINCT
-                                      e.Id, e.Name, e.Birthday, e.Email, e.Salary
+                                      e.Id, e.Name, e.Birthdate, e.Email, e.Salary
                                     FROM
                                       Employees e
                                     WHERE 
@@ -41,13 +41,13 @@ namespace AdoNetSample
                 //create parameter for our command
                 var parameter = new SqlParameter("@len", SqlDbType.Int);
                 //set parameter value
-                parameter.Value = 20;
+                parameter.Value = 2;
                 //add created parameter to command
                 command.Parameters.Add(parameter);
                 //open sql connection
                 connection.Open();
                 //execute and using reader for get results of command executing
-                using (var reader = command.ExecuteReader())
+                using (SqlDataReader reader = command.ExecuteReader())
                 {
                     //read data from reader
                     while (reader.Read())
