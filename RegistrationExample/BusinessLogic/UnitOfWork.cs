@@ -9,7 +9,7 @@ namespace BusinessLogic
     public class UnitOfWork
     {
         private readonly RegDbContext _context = new RegDbContext();
-        private readonly UserLogic _userLogic;
+        private readonly IUserLogic _userLogic;
         private readonly ICrudLogic<Role> _roleLogic;
 
         public UnitOfWork()
