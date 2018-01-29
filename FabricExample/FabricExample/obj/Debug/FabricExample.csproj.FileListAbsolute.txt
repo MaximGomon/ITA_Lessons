@@ -1,6 +1,0 @@
-D:\Work\ITA\FabricExample\FabricExample\bin\Debug\FabricExample.exe.config
-D:\Work\ITA\FabricExample\FabricExample\bin\Debug\FabricExample.exe
-D:\Work\ITA\FabricExample\FabricExample\bin\Debug\FabricExample.pdb
-D:\Work\ITA\FabricExample\FabricExample\obj\Debug\FabricExample.csprojResolveAssemblyReference.cache
-D:\Work\ITA\FabricExample\FabricExample\obj\Debug\FabricExample.exe
-D:\Work\ITA\FabricExample\FabricExample\obj\Debug\FabricExample.pdb

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using FabricExample.Factories;
 
 namespace FabricExample
@@ -7,22 +8,19 @@ namespace FabricExample
     {
         static void Main(string[] args)
         {
-            Hero elf = new Hero(new ElfFactory());
-            elf.Hit();
-            elf.Run();
+            var heroes = new List<Hero>()
+            {
+                new Hero(new ElfFactory()),
+                new Hero(new VoinFactory()),
+                new Hero(new SuperHeroFactory()),
+                new Hero(new DiggHeroFactory())
+            };
 
-            Hero voin = new Hero(new VoinFactory());
-            voin.Hit();
-            voin.Run();
-
-            var superVoin = new Hero(new SuperHeroFactory());
-            superVoin.Hit();
-            superVoin.Run();
-
-            var diggVoin = new Hero(new DiggHeroFactory());
-            diggVoin.Hit();
-            diggVoin.Run();
-
+            foreach (var hero in heroes)
+            {
+                hero.Hit();
+                hero.Run();
+            }
             Console.ReadLine();
         }
     }
